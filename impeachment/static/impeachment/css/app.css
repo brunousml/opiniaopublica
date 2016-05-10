@@ -1,0 +1,88 @@
+h1{
+	color: #7e7575 !important;
+}
+
+header{
+	border-bottom: solid #cfcfcf ;
+	margin-bottom: 
+}
+
+#content{
+	margin-top: 25px;
+	min-height: 400px;
+}
+
+#content li{
+	float: left;
+	padding: 20px 20px 20px 0; 
+	list-style: none;
+}
+
+#related-filmes{
+	margin-top: 30px
+}
+
+.movie-info{
+	float: left;
+}
+
+.clear{
+	clear: both;
+}
+.movie-picture{
+	float: left;
+	width: 280px;
+}
+
+.movie-picture img{
+	max-width: 250px;
+}
+
+.movie-sinopse{
+	float: left;
+	width: 60%;
+
+}
+
+.container img{
+	margin-top: -12px;
+}
+
+ul{
+	margin-left:-40px;
+}
+
+.banner{
+	height: 200px;
+    overflow: hidden;
+    margin-top: -50px
+}
+
+.banner img{
+	margin-top:-450px;
+
+}
+
+button{
+	width: 300px;
+}
+
+.success input{
+	border-color:thin green solid;
+}
+
+.blog-footer {
+  padding: 40px 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+  width: 100%;
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+footer{
+	margin-top: 100px;
+}

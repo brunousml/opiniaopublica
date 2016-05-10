@@ -1,0 +1,47 @@
+{% extends "impeachment/base.html" %}
+
+{% block content %}
+   <div class="starter-template">
+	    <h1>Pesquisa de Opinião Pública</h1>
+	    <h3>Qual é a sua opinião a respeito do Impechment da Presidente Dilma Rousseff?</h3>
+	    <p>
+	      Estamos acompanhando o processo para o afastamento da atual presidente do Brasil, Dilma Rousseff. </p>
+	      <p>Nosso objetivo é compartilhar de forma aberta e imparcial a opinião do povo neste importante momento da nossa história.
+	    </p>
+	    <p>
+	    	<div id="input" class="form-group has-error has-feedback ">
+		      <label class="control-label" for="inputError2">Informe seu título de eleitor</label>
+		      <input type="text" class="form-control text-center" id="register_id" maxlength="14" />
+		    </div>
+	    </p>
+	    <p><button id="a-favor" type="button" class="btn btn-success">A FAVOR</button>
+	    	<button id="contra" type="button" class="btn btn-danger">CONTRA</button></p>
+	    <p><button id="indeciso" type="button" class="btn btn-default">Ainda não possuo uma opnião formada</button></p>
+  </div>
+{% endblock %}
+
+
+{% block votes_list %}
+	<h2>{{electors.count }} Votos Computados em um total  de 141.824.607* de eleitores aptos</h2>
+	{% if electors %}
+	  	<table class="table table-striped">	  
+	  	<thead>
+	  		<tr style="text-transform: uppercase;border-top:solid thin black;">
+	  			<td><b>Número do título de eleitor</b></td>
+	  			<td><b>Votou</b></td>
+	  		</tr>
+	  	</thead>	
+	    {% for el in electors %}
+		    {% if el %}
+			    <tr>
+			        <td data-mask="0000 0000 0000">{{el.register_id}}</td>
+			        {% if el.vote == 1 %}<td style="border-color: green">A favor</td>	{% endif %}
+			        {% if el.vote == 0 %}<td style="border-color: red">Contra</td>	{% endif %}
+			        {% if el.vote == 2 %}<td>Indeciso</td>	{% endif %}
+			    </tr>
+			{% endif %}   
+	    {% endfor %}
+	    </table>
+	{% endif %}   
+{% endblock %}
+
